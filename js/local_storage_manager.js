@@ -27,16 +27,7 @@ function LocalStorageManager() {
 }
 
 LocalStorageManager.prototype.localStorageSupported = function () {
-  var testKey = "test";
-
-  try {
-    var storage = window.localStorage;
-    storage.setItem(testKey, "1");
-    storage.removeItem(testKey);
-    return true;
-  } catch (error) {
-    return false;
-  }
+  return typeof window.localStorage !== 'undefined';
 };
 
 // Best score getters/setters
